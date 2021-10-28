@@ -2,23 +2,21 @@ import logo from './logo.svg';
 import './App.css';
 import { Template } from './Template';
 
+import { ColorPicker } from './ColorPicker';
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Design Your Light Fibers</h1>
+        <h2>Choose a Template</h2>
         <Template />
+
+        <h2>Waistband Pattern</h2>
+        <p>Click on a square to customize your LED strip!</p>
+
+        <ColorPicker/>
+        <h2>Effects (TBD)</h2>
       </header>
     </div>
   );
