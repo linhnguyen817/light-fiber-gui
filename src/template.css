@@ -9,6 +9,10 @@
   margin: auto 1px;
 }
 
+.template :hover {
+  cursor: pointer;
+}
+
 .template-color-strip {
   display: flex;
 }

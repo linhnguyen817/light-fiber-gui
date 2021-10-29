@@ -39,8 +39,8 @@ export const GradientTemplate = (templateName: string) => {
     return (
         <div className="template">
             <div className="template-color-strip">
-                {gradientColors.map(color => {
-                    return <div className="template-box" style={{backgroundColor: color}}/>
+                {gradientColors.map((color, i) => {
+                    return <div  key={i} className="template-box" style={{backgroundColor: color}}/>
                 })}
             </div>
             <p className="template-label">Gradient</p>
@@ -53,8 +53,8 @@ export const BlankTemplate = (templateName: string) => {
     return (
         <div className="template">
             <div className="template-color-strip">
-                {blankColors.map(color => {
-                    return <div className="template-box" style={{backgroundColor: color}}/>
+                {blankColors.map((color, i) => {
+                    return <div key={i} className="template-box" style={{backgroundColor: color}}/>
                 })}
             </div>
             <p className="template-label">Blank</p>
