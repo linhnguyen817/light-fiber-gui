@@ -10,18 +10,22 @@ export interface LEDSquareProps {
 
 export const LEDSquare : FunctionComponent<LEDSquareProps>  = ({onChange, colorString}) => {
     const [colorPicker, showColorPicker] = useState(false);
-    const [squareColor, changeColor] = useState(colorString ? colorString : "#C4C4C4");
-    const componentMounted = useRef(true);
+    console.log(colorString, "string color");
+
+    const [squareColor, changeColor] = useState(colorString);
+    console.log(squareColor, "square color");
 
     useEffect(() => {
-        if (componentMounted.current) {
-            componentMounted.current = false;
-        } else {
-            onChange(squareColor);
-        }        
-        return () => undefined;
+        console.log("override");
+        onChange(squareColor);
     }, [squareColor]);
     
+    useEffect(() => {
+        if(colorString!=squareColor) {
+            changeColor(colorString);
+        }
+    }, [colorString])
+
     return (
         <OutsideClickHandler onOutsideClick={() => {
             showColorPicker(false);

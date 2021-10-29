@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import './template.css';
-import { RainbowTemplate, GradientTemplate, BlankTemplate } from './Template';
+import { Template } from './Template';
 import { PatternSelect } from './PatternSelect';
 
 const rainbowColors = ["#FF0000", "#FF8A00", "#FFF500", "#9EE05C", "#1ED700", "#65E5D6", "#2097DB", "#3242D0", "#B240CF", "#D64EA8"];
@@ -10,20 +10,24 @@ const blankColors = ["#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4
 
 function App() {
   const [patternTemplate, setPatternTemplate] = useState([]);
-    
+
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="App-header">
         <h1>design your light fibers!</h1>
         <h2>choose a template</h2>
         <div className="template-row">
-          <RainbowTemplate onClick={()=>{
-            setPatternTemplate(rainbowColors);
-            }}/>
-          <GradientTemplate/>
+          <div onClick={() => setPatternTemplate(rainbowColors)} >
+            <Template templateName={"rainbow"} />
+          </div>
+          <div  onClick={() => setPatternTemplate(gradientColors)}>
+            <Template templateName={"gradient"}/>
+          </div>
         </div>
         <div className="template-row">
-          <BlankTemplate/>
+          <div onClick={() => setPatternTemplate(blankColors)}>
+            <Template templateName={"blank"}/>
+          </div>
         </div>
 
         <h2>waistband pattern</h2>
@@ -32,7 +36,7 @@ function App() {
         
         <h2>effects (TBD)</h2>
         <h2>preview (TBD)</h2>
-      </header>
+      </div>
     </div>
   );
 }
