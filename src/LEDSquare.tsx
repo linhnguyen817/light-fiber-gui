@@ -7,7 +7,7 @@ export interface LEDSquareProps {
   }
 export const LEDSquare : FunctionComponent<LEDSquareProps>  = ({onChange}) => {
     const [colorPicker, showColorPicker] = useState(false);
-    const [squareColor, changeColor] = useState("#fff");
+    const [squareColor, changeColor] = useState("#C4C4C4");
     const componentMounted = useRef(true);
 
     useEffect(() => {
@@ -23,6 +23,33 @@ export const LEDSquare : FunctionComponent<LEDSquareProps>  = ({onChange}) => {
         <div className="ledsquare">
             <div className="box" style={{backgroundColor: squareColor}}  
                 onClick={() => showColorPicker(!colorPicker)}
+            />
+            <div className="box" style={{backgroundColor: "#C4C4C4"}}  
+                // onClick={() => showColorPicker(!colorPicker)}
+            />
+            <div className="box" style={{backgroundColor: "#C4C4C4"}}  
+                // onClick={() => showColorPicker(!colorPicker)}
+            />
+            <div className="box" style={{backgroundColor: "#C4C4C4"}}  
+                // onClick={() => showColorPicker(!colorPicker)}
+            />
+            <div className="box" style={{backgroundColor: "#C4C4C4"}}  
+                // onClick={() => showColorPicker(!colorPicker)}
+            />
+            <div className="box" style={{backgroundColor: "#C4C4C4"}}  
+                // onClick={() => showColorPicker(!colorPicker)}
+            />
+            <div className="box" style={{backgroundColor: "#C4C4C4"}}  
+                // onClick={() => showColorPicker(!colorPicker)}
+            />
+            <div className="box" style={{backgroundColor: "#C4C4C4"}}  
+                // onClick={() => showColorPicker(!colorPicker)}
+            />
+            <div className="box" style={{backgroundColor: "#C4C4C4"}}  
+                // onClick={() => showColorPicker(!colorPicker)}
+            />
+            <div className="box" style={{backgroundColor: "#C4C4C4"}}  
+                // onClick={() => showColorPicker(!colorPicker)}
             />
             {colorPicker && <div className="colorPicker">
                 <SketchPicker 
