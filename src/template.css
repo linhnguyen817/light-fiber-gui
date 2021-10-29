@@ -1,8 +1,25 @@
-.box {
-    float: left;
-    height: 20px;
-    width: 20px;
-    margin-bottom: 15px;
-    clear: both;
-  }
-  
+.template {
+  margin: 10px 40px;
+}
+
+.template-box {
+  float: left;
+  height: 20px;
+  width: 20px;
+  margin: auto 1px;
+}
+
+.template-color-strip {
+  display: flex;
+}
+
+.template-label {
+  margin: 8px auto;
+  font-size: 0.8em;
+}
+
+.template-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
