@@ -1,8 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import { Template } from './Template';
 
-import { ColorPicker } from './ColorPicker';
+import { LEDSquare } from './LEDSquare';
 
 function App() {
   return (
@@ -14,8 +13,8 @@ function App() {
 
         <h2>Waistband Pattern</h2>
         <p>Click on a square to customize your LED strip!</p>
-
-        <ColorPicker/>
+        <p>Here is an example square for you to click on :) </p>
+        <LEDSquare onChange={() => {}}/>
         <h2>Effects (TBD)</h2>
       </header>
     </div>
