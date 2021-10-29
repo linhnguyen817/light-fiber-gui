@@ -25,8 +25,8 @@ export const RainbowTemplate = (templateName: string) => {
     return (
         <div className="template">
             <div className="template-color-strip">
-                {rainbowColors.map(color => {
-                    return <div className="template-box" style={{backgroundColor: color}}/>
+                {rainbowColors.map((color, i) => {
+                    return <div key={i} className="template-box" style={{backgroundColor: color}}/>
                 })}
             </div>
             <p className="template-label">Rainbow</p>

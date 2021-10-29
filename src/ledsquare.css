@@ -1,8 +1,24 @@
-.ledsquare {
+.patternSelectContainer {
     display: flex;
     flex-direction: row;
+}
+
+.patternSelect {
+    width: 75vw;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.ledsquare {
+    display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.ledsquare :hover {
+    cursor: pointer;
 }
 
 .box {
@@ -12,3 +28,26 @@
     min-width: 20px;
     margin: auto 5px;
   }
+
+.colorPicker {
+    position: absolute;
+    bottom: 10vh;
+}
+
+.arrowLeft {
+    margin: auto;
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent; 
+    border-right:10px solid black; 
+}
+
+.arrowRight {
+    margin: auto;
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent; 
+    border-left:10px solid black; 
+}

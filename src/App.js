@@ -1,7 +1,7 @@
 import './App.css';
 import './template.css';
 import { RainbowTemplate, GradientTemplate, BlankTemplate } from './Template';
-import { LEDSquare } from './LEDSquare';
+import { PatternSelect } from './PatternSelect';
 
 function App() {
   return (
@@ -18,10 +18,10 @@ function App() {
         </div>
 
         <h2>Waistband Pattern</h2>
-        <p>Click on a square to customize your LED strip!</p>
-        <p>Here is an example square for you to click on :) </p>
-        <LEDSquare onChange={() => {}}/>
+        <PatternSelect/>
 
+        <p>Click on a square to customize your LED strip!</p>
+        
         <h2>Effects (TBD)</h2>
       </header>
     </div>
