@@ -4,16 +4,21 @@ import './ledsquare.css';
 
 
 export const PatternSelect = (input: { template : [] }) => {
-    var template = input.template;
-    // console.log(input.template, input.template.length);
+    var temp = input.template;
+    // repeat each template square by 3
+    var template: string[] = [];
+    temp.forEach(color => {
+        for (let i = 0; i < 3; i++) 
+        template.push(color);
+    })
+
     const NUM_LEDS = 30;
     const blankSquares: string[] = [];
     for (var i=0; i<NUM_LEDS; i++) {
         blankSquares.push("#c4c4c4");
     }
-    // TODO: update how we want to display the template
+
     var patternSquares = template.length>0 ? template.concat(template) : blankSquares;
-    // console.log(patternSquares);
 
     useEffect(() => {
         patternSquares = template.length>0 ? template.concat(template) : blankSquares;
