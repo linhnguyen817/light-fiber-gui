@@ -5,7 +5,7 @@ const { Console } = require('console');
 
 app.use(cors())
 const port = process.env.PORT || 5000; 
-
+const gradientColors = ["#BE0505", "#D40000", "#FF0000", "#FF4040", "#FF6D6D", "#FF8B8B", "#FFB0B0", "#FAC9C9", "#FFDDDD", "#FFEBEB"];
 
 // app.use(express.json());
 // app.use(express.urlencoded({ extended: false }));
@@ -14,9 +14,9 @@ const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
 // create a GET route
-app.get('/express_backend', (req, res) => { 
+app.get('/led_design', (req, res) => { 
     console.log("API HIT");
-    res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' }); 
+    res.send({ ledColors: gradientColors }); 
 }); 
 
 app.post('/update_design', function(req, res) {

@@ -11,7 +11,19 @@ const gradientColors = ["#BE0505", "#D40000", "#FF0000", "#FF4040", "#FF6D6D", "
 const blankColors = ["#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", ]
 
 const handleSubmit = () => {
+//   const userObject = {
+//     name: this.state.name,
+//     email: this.state.email
+// };
 
+  // axios.post('http://localhost:5000/update_design', userObject)
+  //     .then((res) => {
+  //         console.log(res.data)
+  //     }).catch((error) => {
+  //         console.log(error)
+  //     });
+
+  // this.setState({ name: '', email: '' })
 };
 
 function App() {
