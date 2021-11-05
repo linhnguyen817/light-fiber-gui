@@ -10,13 +10,10 @@ export interface LEDSquareProps {
 
 export const LEDSquare : FunctionComponent<LEDSquareProps>  = ({onChange, colorString}) => {
     const [colorPicker, showColorPicker] = useState(false);
-    console.log(colorString, "string color");
 
     const [squareColor, changeColor] = useState(colorString);
-    console.log(squareColor, "square color");
 
     useEffect(() => {
-        console.log("override");
         onChange(squareColor);
     }, [squareColor]);
     
