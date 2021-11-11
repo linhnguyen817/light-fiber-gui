@@ -7,6 +7,14 @@ app.use(cors())
 const port = process.env.PORT || 5000; 
 const gradientColors = ["#BE0505", "#D40000", "#FF0000", "#FF4040", "#FF6D6D", "#FF8B8B", "#FFB0B0", "#FAC9C9", "#FFDDDD", "#FFEBEB"];
 
+var bodyParser = require('body-parser');
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
+
 // app.use(express.json());
 // app.use(express.urlencoded({ extended: false }));
 
@@ -21,9 +29,9 @@ app.get('/led_design', (req, res) => {
 
 app.post('/update_design', function(req, res) {
     // console.log(req);
-    console.log(req.body);
+    console.log(req.body.ledColors,);
     const design = {
         ledColors: req.body.ledColors,
     };
-    console.log("Design: ", design);
+    res.send(design)
   });

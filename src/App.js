@@ -3,7 +3,6 @@ import './App.css';
 import './template.css';
 import { Template } from './Template';
 import { PatternSelect } from './PatternSelect';
-import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 
 // TODO: Make constants file
@@ -11,10 +10,10 @@ const rainbowColors = ["#FF0000", "#FF8A00", "#FFF500", "#9EE05C", "#1ED700", "#
 const gradientColors = ["#BE0505", "#D40000", "#FF0000", "#FF4040", "#FF6D6D", "#FF8B8B", "#FFB0B0", "#FAC9C9", "#FFDDDD", "#FFEBEB"];
 const blankColors = ["#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", ]
 
-const handleSubmit = (ledColors) => {
+function handleSubmit(ledColors) {
   const data = {
     ledColors: ledColors,
-};
+  };
 
   // axios.post('http://localhost:5000/update_design', data)
   //     .then((res) => {
@@ -28,6 +27,9 @@ const handleSubmit = (ledColors) => {
         data: data,
     });
 };
+  
+// } handleSubmit = (ledColors) => {
+  
 
 function App() {
   const [patternTemplate, setPatternTemplate] = useState([]);
@@ -57,7 +59,7 @@ function App() {
         
         <h2>effects (TBD)</h2>
         <h2>preview (TBD)</h2>
-        <Button variant="primary" onClick={handleSubmit(gradientColors)}>Submit</Button>{' '}
+        <button onClick={handleSubmit(gradientColors)}>Submit</button>{' '}
       </div>
     </div>
   );
