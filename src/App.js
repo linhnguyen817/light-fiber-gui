@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './App.css';
-import './template.css';
-import { Template } from './Template';
-import { PatternSelect } from './PatternSelect';
+import './Components/template.css';
+import { Template } from './Components/Template';
+import { PatternSelect } from './Components/PatternSelect';
 import axios from 'axios';
 
 // TODO: Make constants file
