@@ -2,7 +2,6 @@ import {useEffect} from 'react';
 import {LEDSquare} from './LEDSquare';
 import './ledsquare.css';
 
-
 export const PatternSelect = (input: { template : [] }) => {
     var temp = input.template;
     // repeat each template square by 3
@@ -26,13 +25,13 @@ export const PatternSelect = (input: { template : [] }) => {
 
     return (
     <div className = "patternSelectContainer">
-        <div className="arrowLeft" ></div>
+        {/* <div className="arrowLeft" ></div> */}
         <div className = "patternSelect">
             {patternSquares.map((squareColor, index) => {
                 return <LEDSquare key={index} colorString={squareColor} onChange={() => {}}/>
              })}
         </div>
-        <div className="arrowRight"></div>
+        {/* <div className="arrowRight"></div> */}
     </div>
     )
 }
