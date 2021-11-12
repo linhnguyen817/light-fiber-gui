@@ -1,67 +1,74 @@
-import { useState } from 'react';
+import { useState, createContext } from "react";
 import './App.css';
 import './Components/template.css';
 import { Template } from './Components/Template';
 import { PatternSelect } from './Components/PatternSelect';
 import axios from 'axios';
+import { rainbowColors, gradientColors, blankColors } from './constants'
 
-// TODO: Make constants file
-const rainbowColors = ["#FF0000", "#FF8A00", "#FFF500", "#9EE05C", "#1ED700", "#65E5D6", "#2097DB", "#3242D0", "#B240CF", "#D64EA8"];
-const gradientColors = ["#BE0505", "#D40000", "#FF0000", "#FF4040", "#FF6D6D", "#FF8B8B", "#FFB0B0", "#FAC9C9", "#FFDDDD", "#FFEBEB"];
-const blankColors = ["#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", ]
+async function handleSubmit(ledColors) {
+  const res = await axios({
+        url: 'http://localhost:5000/update_design',
+        method: 'post',
+        data: {
+          ledColors: ledColors,
+        },
+    });
+  console.log("res: ", res);
+};  
 
-function handleSubmit(ledColors) {
-  const data = {
-    ledColors: ledColors,
+export const PatternContext = createContext();
+function App() {
+  const [pattern, setPattern] = useState(blankColors);
+
+  function updatePattern(newPattern) {
+    // repeat each template square by 3
+    var template = [];
+    newPattern.forEach(color => {
+        for (let i = 0; i < 3; i++) 
+        template.push(color);
+    });
+    setPattern(template);
+  };
+  function updatePatternSquare(color, index) {
+    console.log(color, index);
+    var newPattern = pattern;
+    newPattern[index] = color;
+    setPattern(newPattern);
+    console.log(pattern);
   };
 
-  // axios.post('http://localhost:5000/update_design', data)
-  //     .then((res) => {
-  //         console.log(res.data)
-  //     }).catch((error) => {
-  //         console.log(error)
-  //     });
-  axios({
-        url: 'http://localhost:5000/update_design',
-        method: 'put',
-        data: data,
-    });
-};
-  
-// } handleSubmit = (ledColors) => {
-  
-
-function App() {
-  const [patternTemplate, setPatternTemplate] = useState([]);
 
   return (
-    <div className="App">
-      <div className="App-header">
-        <h1>design your light fibers!</h1>
-        <h2>choose a template</h2>
-        <div className="template-row">
-          <div onClick={() => setPatternTemplate(rainbowColors)} >
-            <Template templateName={"rainbow"} />
-          </div>
-          <div  onClick={() => setPatternTemplate(gradientColors)}>
-            <Template templateName={"gradient"}/>
-          </div>
-        </div>
-        <div className="template-row">
-          <div onClick={() => setPatternTemplate(blankColors)}>
-            <Template templateName={"blank"}/>
-          </div>
-        </div>
+    <PatternContext.Provider value={{pattern, updatePattern, updatePatternSquare}}>
+        <div className="App">
+          <div className="App-header">
+            <h1>design your light fibers!</h1>
+            <h2>choose a template</h2>
+            <div className="template-row">
+              <div onClick={() => updatePattern(rainbowColors)} >
+                <Template templateName={"rainbow"} />
+              </div>
+              <div  onClick={() => updatePattern(gradientColors)}>
+                <Template templateName={"gradient"}/>
+              </div>
+            </div>
+            <div className="template-row">
+              <div onClick={() => updatePattern(blankColors)}>
+                <Template templateName={"blank"}/>
+              </div>
+            </div>
 
-        <h2>waistband pattern</h2>
-        <PatternSelect template={patternTemplate}/>
-        <p>click on a square to customize your LED strip!</p>
-        
-        <h2>effects (TBD)</h2>
-        <h2>preview (TBD)</h2>
-        <button onClick={handleSubmit(gradientColors)}>Submit</button>{' '}
-      </div>
-    </div>
+            <h2>waistband pattern</h2>
+            <PatternSelect template={pattern}/>
+            <p>click on a square to customize your LED strip!</p>
+            
+            <h2>effects (TBD)</h2>
+            <h2>preview (TBD)</h2>
+            <button type="submit" onClick={() => handleSubmit(pattern)}>Submit</button>{' '}
+          </div>
+        </div>
+    </PatternContext.Provider>
   );
 }
 

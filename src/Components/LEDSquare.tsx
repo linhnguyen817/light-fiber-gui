@@ -1,27 +1,35 @@
-import { FunctionComponent, useEffect, useRef, useState } from 'react';
+import { FunctionComponent, useEffect, useContext, useState } from 'react';
 import { SketchPicker } from 'react-color';
 import './ledsquare.css';
 import OutsideClickHandler from 'react-outside-click-handler';
+import { PatternContext } from '../App';
 
 export interface LEDSquareProps {
     onChange: (value: string) => void;
     colorString: string;
+    index: number;
   }
 
-export const LEDSquare : FunctionComponent<LEDSquareProps>  = ({onChange, colorString}) => {
+export const LEDSquare : FunctionComponent<LEDSquareProps>  = ({onChange, colorString, index}) => {
+    var { updatePatternSquare } = useContext(PatternContext);
     const [colorPicker, showColorPicker] = useState(false);
-
     const [squareColor, changeColor] = useState(colorString);
 
-    useEffect(() => {
-        onChange(squareColor);
-    }, [squareColor]);
-    
+    // handles loading new template
     useEffect(() => {
         if(colorString!=squareColor) {
             changeColor(colorString);
+            console.log("loading new template");
+            updatePatternSquare(colorString, index);
         }
     }, [colorString])
+
+    useEffect(() => {
+        onChange(squareColor);
+        console.log("displaying new template");
+        updatePatternSquare(squareColor, index);
+    }, [squareColor]);
+    
 
     return (
         <OutsideClickHandler onOutsideClick={() => {
@@ -34,7 +42,7 @@ export const LEDSquare : FunctionComponent<LEDSquareProps>  = ({onChange, colorS
             {colorPicker && <div className="colorPicker">
                 <SketchPicker 
                     color={squareColor}
-                    onChangeComplete={color => changeColor(color.hex)}
+                    onChangeComplete={color => changeColor(color.hex.toUpperCase())}
                 />
             </div>}
         </div>
