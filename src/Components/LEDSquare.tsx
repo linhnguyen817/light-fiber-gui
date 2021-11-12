@@ -19,14 +19,12 @@ export const LEDSquare : FunctionComponent<LEDSquareProps>  = ({onChange, colorS
     useEffect(() => {
         if(colorString!=squareColor) {
             changeColor(colorString);
-            console.log("loading new template");
             updatePatternSquare(colorString, index);
         }
     }, [colorString])
 
     useEffect(() => {
         onChange(squareColor);
-        console.log("displaying new template");
         updatePatternSquare(squareColor, index);
     }, [squareColor]);
     

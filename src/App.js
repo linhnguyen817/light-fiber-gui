@@ -14,10 +14,11 @@ async function handleSubmit(ledColors) {
           ledColors: ledColors,
         },
     });
-  console.log("res: ", res);
+  console.log("POST Request Successful: ", res);
 };  
 
 export const PatternContext = createContext();
+
 function App() {
   const [pattern, setPattern] = useState(blankColors);
 
@@ -31,11 +32,9 @@ function App() {
     setPattern(template);
   };
   function updatePatternSquare(color, index) {
-    console.log(color, index);
     var newPattern = pattern;
     newPattern[index] = color;
     setPattern(newPattern);
-    console.log(pattern);
   };
 
 
