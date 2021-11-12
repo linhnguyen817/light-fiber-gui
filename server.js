@@ -1,10 +1,9 @@
-import { rainbowColors } from './../constants';
-
 const express = require('express'); 
 const app = express(); 
 const cors = require('cors');
 
 app.use(cors())
+app.use(express.static("src"))
 const port = process.env.PORT || 5000; 
 var bodyParser = require('body-parser');
 
@@ -20,7 +19,7 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 // create a GET route (test)
 app.get('/led_design', (req, res) => { 
     console.log("API HIT");
-    res.send({ ledColors: rainbowColors }); 
+    res.send({ ledColors: ["000000", "FFFFFF"] }); 
 }); 
 
 app.post('/update_design', function(req, res) {
