@@ -1,14 +1,14 @@
 import './template.css';
-import { rainbowColors, gradientColors, blankColors } from './../constants';
+import { rainbowTemplate, gradientTemplate, blankTemplate } from './../constants';
 
 function getColorStrip(templateName: string): string[] {
     switch (templateName) {
         case "rainbow":
-            return rainbowColors;
+            return rainbowTemplate;
         case "gradient":
-            return gradientColors;
+            return gradientTemplate;
         case "blank":
-            return blankColors;
+            return blankTemplate;
         default:
             return [];
     }

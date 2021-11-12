@@ -1,6 +1,6 @@
 .App {
   text-align: left;
-  background-color: #F7F7F7;
+  background-color: #FFFFFF;
 }
 
 .App-logo {
@@ -15,24 +15,19 @@
 }
 
 .App-header {
-  background-color: #F7F7F7;
+  background-color: #FFFFFF;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: left;
   color: black;
-  margin: 0px 30px;
+  margin: 30px;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.section {
+  margin: 10px 0px;
 }
