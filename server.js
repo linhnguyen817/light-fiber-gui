@@ -1,7 +1,8 @@
 const express = require('express'); 
-const app = express(); 
 const cors = require('cors');
+const mysql = require('mysql');
 
+const app = express(); 
 app.use(cors())
 app.use(express.static("src"))
 const port = process.env.PORT || 5000; 
@@ -13,17 +14,28 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
+// call sync()
+const db = require("./models");
+db.sequelize.sync();
+
+// led_designs routes
+require("./routes/led_design.routes.js")(app);
+
 // This displays message that the server running and listening to specified port
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
 // create a GET route (test)
 app.get('/led_design', (req, res) => { 
-    console.log("API HIT");
-    res.send({ ledColors: ["000000", "FFFFFF"] }); 
+    console.log("GET Request");
+    
+    res.send({ ledColors: 
+        ["#FF0000", "#FF8A00", "#FFF500", "#9EE05C", "#1ED700", "#65E5D6", "#2097DB", "#3242D0", "#B240CF", "#D64EA8"]
+    }); 
 }); 
 
 app.post('/update_design', function(req, res) {
-    console.log(req.body.ledColors,);
+    console.log("POST Request");
+    console.log(req.body.ledColors);
     const design = {
         ledColors: req.body.ledColors,
     };
