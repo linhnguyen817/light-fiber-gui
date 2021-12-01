@@ -4,12 +4,13 @@ import './Components/template.css';
 import { Template } from './Components/Template';
 import { PatternSelect } from './Components/PatternSelect';
 import axios from 'axios';
-import { apiUrl, rainbowTemplate, gradientTemplate, blankTemplate, blankPattern } from './constants';
+import { apiUrl, localAPIUrl, rainbowTemplate, gradientTemplate, blankTemplate, blankPattern } from './constants';
 import Button from 'react-bootstrap/Button';
 
 async function handleSubmit(ledColors) {
+  console.log(ledColors);
   const res = await axios({
-        url: apiUrl,
+        url: localAPIUrl,
         method: 'post',
         data: {
           ledColors: ledColors,

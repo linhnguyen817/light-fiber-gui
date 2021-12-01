@@ -7,3 +7,4 @@ export const blankTemplate = ["#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4
 export const blankPattern = ["#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4"];
 
 export const apiUrl = "https://light-fiber-gui.herokuapp.com/update_design";
+export const localAPIUrl = "http://localhost:5000/update_design";
