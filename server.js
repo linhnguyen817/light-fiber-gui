@@ -1,6 +1,5 @@
 const express = require('express'); 
 const cors = require('cors');
-const mysql = require('mysql');
 
 const app = express(); 
 app.use(cors())
@@ -13,13 +12,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
 app.use(bodyParser.json());
-
-// call sync()
-const db = require("./models");
-db.sequelize.sync();
-
-// led_designs routes
-require("./routes/led_design.routes.js")(app);
 
 // This displays message that the server running and listening to specified port
 app.listen(port, () => console.log(`Listening on port ${port}`));
