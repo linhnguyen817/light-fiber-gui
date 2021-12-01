@@ -21,7 +21,7 @@ app.get('/led_design', (req, res) => {
     console.log("GET Request");
     
     res.send({ ledColors: 
-        ["#FF0000", "#FF8A00", "#FFF500", "#9EE05C", "#1ED700", "#65E5D6", "#2097DB", "#3242D0", "#B240CF", "#D64EA8"]
+        ["#FF0000", "#FF0000", "#FF0000", "#FF8A00", "#FF8A00", "#FF8A00", "#FFF500", "#FFF500", "#FFF500", "#9EE05C", "#9EE05C", "#9EE05C", "#1ED700", "#1ED700", "#1ED700", "#65E5D6", "#65E5D6", "#65E5D6", "#2097DB", "#2097DB", "#2097DB", "#3242D0", "#3242D0", "#3242D0", "#B240CF", "#B240CF", "#B240CF", "#D64EA8", "#D64EA8", "#D64EA8"]
     }); 
 }); 
 
@@ -32,4 +32,4 @@ app.post('/update_design', function(req, res) {
         ledColors: req.body.ledColors,
     };
     res.send(design)
-  });
+});
