@@ -33,7 +33,14 @@ connectToServer(function (err) {
   });
 });
 
-app.use(express.static('client/build'));
+const path = require('path');
+let root = path.join(__dirname, 'client', 'build');
+app.use(express.static(root))
+app.use(function(req, res, next) {
+  if (req.method === 'GET' && req.accepts('html') && !req.is('json') && !req.path.includes('.')) {
+    res.sendFile('index.html', { root })
+  } else next()
+})
 
 app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);
