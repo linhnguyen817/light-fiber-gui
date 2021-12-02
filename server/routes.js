@@ -13,7 +13,7 @@ const __dirname = path.resolve(path.dirname(''));
 
 recordRoutes.route('/').get(async function (req, res) {
     console.log("try to load client/build static files", __dirname);
-    res.sendFile(path.join(__dirname,"client/build/src"))
+    res.sendFile(path.join(__dirname,"client/build"))
 });
 
 // create a GET route (test)
