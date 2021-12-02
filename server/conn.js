@@ -1,6 +1,7 @@
 // MONGO DB
 import mongoose from "mongoose";
-const mongoConnectionSRV = "mongodb+srv://admin:admin@cluster0.chs7o.mongodb.net/GUI_DB?retryWrites=true&w=majority";
+
+const mongoConnectionSRV = process.env.MONGODB_URI;
 const databaseName = "GUI_DB";
 const options = {useNewUrlParser: true, useUnifiedTopology: true, dbName: databaseName};
 
