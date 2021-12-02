@@ -12,6 +12,7 @@ import path from 'path';
 const __dirname = path.resolve(path.dirname('')); 
 
 recordRoutes.route('/').get(function (req, res) {
+    console.log("try to load client/build static files");
     res.sendFile(path.join(__dirname,"client/build"));
 });
 
@@ -37,7 +38,8 @@ recordRoutes.route('/api/update_design').post(function(req, res) {
 });
 
 recordRoutes.route('*').get(function (req, res){
-    res.sendFile(path.join(__dirname,'client/build','index.html'));
+    console.log("trying to load index.html from ../client/build");
+    res.sendFile(path.join(__dirname,'../client/build','index.html'));
   });
 
 

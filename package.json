@@ -9,10 +9,8 @@
     "@types/node": "^16.11.6"
   },
   "scripts": {
-    "begin": "npm run build && node server.js",
-    "start": "node server.js",
-    "install": "cd client && npm install",
-    "build": "cd client && npm run build"
+    "start": "npm install && node server.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
