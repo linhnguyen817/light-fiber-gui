@@ -13,7 +13,7 @@ import path from 'path';
 const __dirname = path.resolve(path.dirname('')); 
 
 recordRoutes.route('/').get(function (req, res) {
-    res.sendFile(path.join(__dirname,"src/build"));
+    res.sendFile(path.join(__dirname,"src/index.js"));
 });
 
 // create a GET route (test)
