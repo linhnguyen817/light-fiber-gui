@@ -4,7 +4,9 @@
     "nodemon": "^2.0.15",
     "require": "^2.4.20",
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^6.0.14",
+    "@types/node": "^16.11.6"
   },
   "scripts": {
     "start": "npm install && node server.js",
