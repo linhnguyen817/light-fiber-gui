@@ -33,6 +33,8 @@ connectToServer(function (err) {
   });
 });
 
+app.use(express.static('client/build'));
+
 app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);
 });

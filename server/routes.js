@@ -13,7 +13,7 @@ const __dirname = path.resolve(path.dirname(''));
 
 recordRoutes.route('/').get(async function (req, res) {
     console.log("try to load client/build static files", __dirname);
-    res.sendFile(path.join(__dirname,"client/build"))
+    res.sendFile(path.join(__dirname,"client/build/src"))
 });
 
 // create a GET route (test)
@@ -38,8 +38,8 @@ recordRoutes.route('/api/update_design').post(function(req, res) {
 });
 
 recordRoutes.route('*').get(async function (req, res){
-    console.log("trying to load index.html from client/public");
-    res.sendFile(path.join(__dirname,'client/public','index.html'));
+    console.log("trying to load index.html from client/build");
+    res.sendFile(path.join(__dirname,'client/build','index.html'));
   });
 
 
