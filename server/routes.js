@@ -12,8 +12,8 @@ import path from 'path';
 const __dirname = path.resolve(path.dirname('')); 
 
 recordRoutes.route('/').get(async function (req, res) {
-    console.log("try to load client/build static files", __dirname, path);
-    res.sendFile(path.join(__dirname,"client/build"));
+    console.log("try to load client/build static files", __dirname);
+    res.sendFile(path.join(__dirname,"client/build"))
 });
 
 // create a GET route (test)
@@ -38,8 +38,8 @@ recordRoutes.route('/api/update_design').post(function(req, res) {
 });
 
 recordRoutes.route('*').get(async function (req, res){
-    console.log("trying to load index.html from ../client/build");
-    res.sendFile(path.join(__dirname,'../client/build','index.html'));
+    console.log("trying to load index.html from client/build");
+    res.sendFile(path.join(__dirname,'client/build','index.html'));
   });
 
 
