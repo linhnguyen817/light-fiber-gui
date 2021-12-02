@@ -6,4 +6,4 @@ export const blankTemplate = ["#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4
 // 30 squares
 export const blankPattern = ["#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4"];
 
-export const apiUrl = "https://led-skirt-gui.herokuapp.com/update_design";
+export const apiUrl = "https://led-skirt-gui.herokuapp.com/api/update_design";

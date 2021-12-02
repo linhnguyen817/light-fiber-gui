@@ -22,6 +22,5 @@
   },
   "include": [
     "src",
-    "server"
-, "server/server.js"  ]
+    "server", "server/server.js"  ]
 }

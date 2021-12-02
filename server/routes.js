@@ -16,13 +16,13 @@ recordRoutes.route('/').get(function (req, res) {
 });
 
 // create a GET route (test)
-recordRoutes.route('/led_design').get(async function (req, res) { 
+recordRoutes.route('/api/led_design').get(async function (req, res) { 
     console.log("GET Request");
     LEDData.find({}).sort({created_at: -1}).limit(1)
     .then((data)=>res.send(data)); 
 }); 
 
-recordRoutes.route('/update_design').post(function(req, res) {
+recordRoutes.route('/api/update_design').post(function(req, res) {
     console.log("POST Request");
     console.log(req.body.ledColors, "req.body.ledColors");
 
@@ -37,7 +37,7 @@ recordRoutes.route('/update_design').post(function(req, res) {
 });
 
 recordRoutes.route('*').get(function (req, res){
-    res.sendFile(path.join(__dirname,'../client/build/index.html'));
+    res.sendFile(path.join(__dirname,'../client/build','index.html'));
   });
 
 
