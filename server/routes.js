@@ -6,14 +6,13 @@ import {LEDData} from './conn.js';
 
 const recordRoutes = express.Router();
 
-
 console.log("tried to connect dbo ");
 
 import path from 'path';
 const __dirname = path.resolve(path.dirname('')); 
 
 recordRoutes.route('/').get(function (req, res) {
-    res.sendFile(path.join(__dirname,"src/build/index.html"));
+    res.sendFile(path.join(__dirname,"src/build"));
 });
 
 // create a GET route (test)
