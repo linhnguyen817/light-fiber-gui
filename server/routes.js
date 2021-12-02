@@ -19,7 +19,7 @@ recordRoutes.route('/').get(async function (req, res) {
 // create a GET route (test)
 recordRoutes.route('/led_design').get(async function (req, res) { 
     console.log("GET Request");
-    LEDData.find({}).sort({created_at: 1}).limit(1)
+    LEDData.find({}).sort({_id:-1}).limit(1)
     .then((data)=>res.send(data)); 
 }); 
 
