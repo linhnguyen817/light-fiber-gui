@@ -6,7 +6,7 @@ import bodyparser from 'body-parser';
 const { urlencoded, json } = bodyparser;
 import recordRoutes from './server/routes.js';
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const app = express();
 
 app.use(cors());
