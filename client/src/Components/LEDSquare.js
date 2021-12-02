@@ -4,13 +4,7 @@ import './ledsquare.css';
 import OutsideClickHandler from 'react-outside-click-handler';
 import { PatternContext } from '../App';
 
-export interface LEDSquareProps {
-    onChange: (value: string) => void;
-    colorString: string;
-    index: number;
-  }
-
-export const LEDSquare : FunctionComponent<LEDSquareProps>  = ({onChange, colorString, index}) => {
+export const LEDSquare = ({onChange, colorString, index}) => {
     var { updatePatternSquare } = useContext(PatternContext);
     const [colorPicker, showColorPicker] = useState(false);
     const [squareColor, changeColor] = useState(colorString);

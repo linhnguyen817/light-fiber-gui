@@ -1,7 +1,7 @@
 import './template.css';
-import { rainbowTemplate, gradientTemplate, blankTemplate } from './../constants';
+import { rainbowTemplate, gradientTemplate, blankTemplate } from '../constants';
 
-function getColorStrip(templateName: string): string[] {
+function getColorStrip(templateName) {
     switch (templateName) {
         case "rainbow":
             return rainbowTemplate;
@@ -14,7 +14,7 @@ function getColorStrip(templateName: string): string[] {
     }
 } 
 
-export const Template = (input: {templateName: string} ) => {
+export const Template = (input ) => {
     var templateName = input.templateName;
     const colorStrip = getColorStrip(templateName);
     return (
