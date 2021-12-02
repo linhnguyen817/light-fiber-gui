@@ -37,7 +37,7 @@ recordRoutes.route('/update_design').post(function(req, res) {
 });
 
 recordRoutes.route('*').get(function (req, res){
-    res.sendFile(path.join(__dirname+'/src/build/index.html'));
+    res.sendFile(path.join(__dirname+'/client/build'));
   });
 
 
