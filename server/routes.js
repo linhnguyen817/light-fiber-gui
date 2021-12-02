@@ -9,10 +9,11 @@ const recordRoutes = express.Router();
 
 console.log("tried to connect dbo ");
 
-import path from 'path';
+import path, { dirname} from 'path';
+const __dirname = dirname(__filename);
 
 recordRoutes.route('/').get(function (req, res) {
- res.sendFile(path.join(__dirname, "src", "build"));
+    res.sendFile(path.join(__dirname,"src/build"));
 });
 
 // create a GET route (test)
@@ -35,6 +36,10 @@ recordRoutes.route('/update_design').post(function(req, res) {
     data.save()
         .then((design) => res.send(design))
 });
+
+recordRoutes.route('*').get(function (req, res){
+    res.sendFile(path.join(__dirname+'/src/build/index.html'));
+  });
 
 
 export default recordRoutes;
