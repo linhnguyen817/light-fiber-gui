@@ -9,6 +9,7 @@ const recordRoutes = express.Router();
 
 console.log("tried to connect dbo ");
 
+
 // create a GET route (test)
 recordRoutes.route('/led_design').get(async function (req, res) { 
     console.log("GET Request");

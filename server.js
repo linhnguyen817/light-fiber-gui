@@ -36,3 +36,5 @@ connectToServer(function (err) {
 app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);
 });
+
+app.use(express.static(path.resolve(__dirname, "./src/build")));
