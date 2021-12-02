@@ -1,10 +1,10 @@
 import express from 'express';
 import cors from 'cors';
 // get MongoDB driver connection
-import { connectToServer } from './conn.js';
+import { connectToServer } from './server/conn.js';
 import bodyparser from 'body-parser';
 const { urlencoded, json } = bodyparser;
-import recordRoutes from './routes.js';
+import recordRoutes from './server/routes.js';
 
 const PORT = 5000;
 const app = express();
