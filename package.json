@@ -1,5 +1,6 @@
 {
   "type": "module",
+  "homepage": "https://led-skirt-gui.herokuapp.com/",
   "dependencies": {
     "nodemon": "^2.0.15",
     "require": "^2.4.20",
