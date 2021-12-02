@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "dependencies": {
+    "nodemon": "^2.0.15",
+    "require": "^2.4.20"
+  }
+}

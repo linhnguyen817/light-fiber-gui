@@ -8,14 +8,8 @@ import { apiUrl, rainbowTemplate, gradientTemplate, blankTemplate, blankPattern 
 import Button from 'react-bootstrap/Button';
 
 async function handleSubmit(ledColors) {
-  const res = await axios({
-        url: apiUrl,
-        method: 'post',
-        data: {
-          ledColors: ledColors,
-        },
-    });
-  console.log("Pattern update successful: ", res);
+  const res = await axios.post(apiUrl, {ledColors: ledColors});
+  console.log("Pattern update sent: ", res);
 };  
 
 export const PatternContext = createContext();
