@@ -10,8 +10,7 @@
   },
   "scripts": {
     "start": "npm install && node server.js",
-    "build": "cd client && npm install && npm run build",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm run build"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
