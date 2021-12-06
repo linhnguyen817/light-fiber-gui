@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, createContext } from "react";
 import './App.css';
 import './Components/template.css';
@@ -8,7 +9,8 @@ import { apiUrl, rainbowTemplate, gradientTemplate, blankTemplate, blankPattern 
 import Button from 'react-bootstrap/Button';
 
 async function handleSubmit(ledColors) {
-  const res = await axios.post(apiUrl, {ledColors: ledColors});
+  //const res = await axios.post(apiUrl, {ledColors: ledColors});
+  const res = await axios.post(apiUrl, {ledColors: ledColors, effect: "March"});
   console.log("Pattern update sent: ", res);
 };  
 
@@ -62,6 +64,12 @@ function App() {
             
             <div className="section">
               <h2>effects (TBD)</h2>
+              <Button variant="primary" onClick={() => handleSubmit(pattern)}>Confetti</Button>{' '}
+              <Button variant="primary" onClick={() => handleSubmit(pattern)}>Rainbow March</Button>{' '}
+              <Button variant="primary" onClick={() => handleSubmit(pattern)}>Static Rainbow</Button>{' '}
+              <Button variant="primary" onClick={() => handleSubmit(pattern)}>Dots</Button>{' '}
+              <Button variant="primary" onClick={() => handleSubmit(pattern)}>Sine</Button>{' '}
+
             </div>
             
             <div className="section">

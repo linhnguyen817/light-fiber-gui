@@ -1,3 +1,4 @@
+import React from 'react';
 import { FunctionComponent, useEffect, useContext, useState } from 'react';
 import { SketchPicker } from 'react-color';
 import './ledsquare.css';

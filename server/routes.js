@@ -29,6 +29,7 @@ recordRoutes.route('/update_design').post(function(req, res) {
 
     const design = {
         ledColors: req.body.ledColors,
+        effect: req.body.effect,
         createdAt: Date.now()
     };
 

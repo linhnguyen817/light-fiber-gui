@@ -6,4 +6,5 @@ export const blankTemplate = ["#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4
 // 30 squares
 export const blankPattern = ["#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4", "#C4C4C4"];
 
-export const apiUrl = "https://led-skirt-api.herokuapp.com/update_design";
+//export const apiUrl = "https://led-skirt-api.herokuapp.com/update_design";
+export const apiUrl = "http://localhost:5000/update_design"; // local development
