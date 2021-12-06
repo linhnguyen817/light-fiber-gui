@@ -2,6 +2,7 @@
 import mongoose from "mongoose";
 
 const mongoConnectionSRV = process.env.MONGODB_URI;
+// const mongoConnectionSRV = "mongodb+srv://admin:admin@cluster0.chs7o.mongodb.net/GUI_DB?retryWrites=true&w=majority";
 const databaseName = "GUI_DB";
 const options = {useNewUrlParser: true, useUnifiedTopology: true, dbName: databaseName};
 

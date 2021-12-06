@@ -18,10 +18,10 @@ function App() {
   const [pattern, setPattern] = useState(blankPattern);
 
   function updatePattern(newPattern) {
-    // repeat each template square by 3
+    // repeat each template square by 2
     var template = [];
     newPattern.forEach(color => {
-        for (let i = 0; i < 3; i++) 
+        for (let i = 0; i < 2; i++) 
         template.push(color);
     });
     setPattern(template);

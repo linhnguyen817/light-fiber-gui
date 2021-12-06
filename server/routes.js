@@ -6,16 +6,6 @@ import {LEDData} from './conn.js';
 
 const recordRoutes = express.Router();
 
-console.log("tried to connect dbo ");
-
-import path from 'path';
-const __dirname = path.resolve(path.dirname('')); 
-
-recordRoutes.route('/').get(async function (req, res) {
-    console.log("try to load client/build static files", __dirname);
-    res.sendFile(path.join(__dirname,"client/build"))
-});
-
 // create a GET route (test)
 recordRoutes.route('/led_design').get(async function (req, res) { 
     console.log("GET Request");
@@ -36,11 +26,5 @@ recordRoutes.route('/update_design').post(function(req, res) {
     data.save()
         .then((design) => res.send(design))
 });
-
-recordRoutes.route('*').get(async function (req, res){
-    console.log("trying to load index.html from client/build");
-    res.sendFile(path.join(__dirname,'client/build','index.html'));
-  });
-
 
 export default recordRoutes;
