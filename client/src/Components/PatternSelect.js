@@ -1,3 +1,4 @@
+import React from 'react';
 import { useContext } from "react";
 import { LEDSquare } from './LEDSquare';
 import './ledsquare.css';

@@ -2,13 +2,14 @@
 import mongoose from "mongoose";
 
 const mongoConnectionSRV = process.env.MONGODB_URI;
-// const mongoConnectionSRV = "mongodb+srv://admin:admin@cluster0.chs7o.mongodb.net/GUI_DB?retryWrites=true&w=majority";
+
 const databaseName = "GUI_DB";
 const options = {useNewUrlParser: true, useUnifiedTopology: true, dbName: databaseName};
 
 const LEDSchema = new mongoose.Schema({
     ledColors: [String],
-    createdAt: Date
+    createdAt: Date,
+    effect: String
 });
 
 export const LEDData = mongoose.model("LEDData", LEDSchema);
@@ -19,3 +20,5 @@ export function connectToServer(callback) {
   .catch((error)=>console.log(error));
 
 }
+
+

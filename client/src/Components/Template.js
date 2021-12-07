@@ -1,3 +1,4 @@
+import React from 'react';
 import './template.css';
 import { rainbowTemplate, gradientTemplate, blankTemplate } from '../constants';
 

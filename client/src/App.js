@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, createContext } from "react";
 import './App.css';
 import './Components/template.css';
@@ -7,8 +8,8 @@ import axios from 'axios';
 import { apiUrl, rainbowTemplate, gradientTemplate, blankTemplate, blankPattern } from './constants';
 import Button from 'react-bootstrap/Button';
 
-async function handleSubmit(ledColors) {
-  const res = await axios.post(apiUrl, {ledColors: ledColors});
+async function handleSubmit(ledColors, effect) {
+  const res = await axios.post(apiUrl, {ledColors: ledColors, effect: effect});
   console.log("Pattern update sent: ", res);
 };  
 
@@ -16,6 +17,7 @@ export const PatternContext = createContext();
 
 function App() {
   const [pattern, setPattern] = useState(blankPattern);
+  const [effect, setEffect] = useState("None");
 
   function updatePattern(newPattern) {
     // repeat each template square by 2
@@ -32,11 +34,12 @@ function App() {
     setPattern(newPattern);
   };
 
+
   return (
     <PatternContext.Provider value={{pattern, updatePattern, updatePatternSquare}}>
         <div className="App">
           <div className="App-header">
-            <h1>design your light fibers!</h1>
+            <h1>design your skirt!</h1>
             <div className="section">
               <h2>choose a template</h2>
               <div className="template-row">
@@ -61,15 +64,17 @@ function App() {
             </div>
             
             <div className="section">
-              <h2>effects (TBD)</h2>
+              <h2>current effect: {effect}</h2>
+              <Button variant="primary" onClick={() => setEffect("Confetti")}>Confetti</Button>{' '}
+              <Button variant="primary" onClick={() => setEffect("March")}>Rainbow March</Button>{' '}
+              <Button variant="primary" onClick={() => setEffect("Rainbow")}>Static Rainbow</Button>{' '}
+              <Button variant="primary" onClick={() => setEffect("Dots")}>Dots</Button>{' '}
+              <Button variant="primary" onClick={() => setEffect("Sine")}>Sine</Button>{' '}
+
             </div>
             
             <div className="section">
-              <h2>preview (TBD)</h2>
-            </div>
-
-            <div className="section">
-              <Button variant="primary" type="submit" onClick={() => handleSubmit(pattern)}>submit</Button>{' '}
+              <Button variant="primary" type="submit" onClick={() => handleSubmit(pattern, effect)}>submit</Button>{' '}
             </div>
           </div>
         </div>
