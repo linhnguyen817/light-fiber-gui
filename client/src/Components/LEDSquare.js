@@ -1,5 +1,5 @@
 import React from 'react';
-import { FunctionComponent, useEffect, useContext, useState } from 'react';
+import { useEffect, useContext, useState } from 'react';
 import { SketchPicker } from 'react-color';
 import './ledsquare.css';
 import OutsideClickHandler from 'react-outside-click-handler';
