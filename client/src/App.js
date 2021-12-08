@@ -65,11 +65,11 @@ function App() {
             
             <div className="section">
               <h2>current effect: {effect}</h2>
-              <Button variant="primary" onClick={() => setEffect("Confetti")}>Confetti</Button>{' '}
-              <Button variant="primary" onClick={() => setEffect("March")}>Rainbow March</Button>{' '}
-              <Button variant="primary" onClick={() => setEffect("Rainbow")}>Static Rainbow</Button>{' '}
-              <Button variant="primary" onClick={() => setEffect("Dots")}>Dots</Button>{' '}
-              <Button variant="primary" onClick={() => setEffect("Sine")}>Sine</Button>{' '}
+              <Button variant="info" onClick={() => setEffect("Confetti")}>Confetti</Button>{' '}
+              <Button variant="info" onClick={() => setEffect("March")}>Rainbow March</Button>{' '}
+              <Button variant="info" onClick={() => setEffect("Rainbow")}>Static Rainbow</Button>{' '}
+              <Button variant="info" onClick={() => setEffect("Dots")}>Dots</Button>{' '}
+              <Button variant="info" onClick={() => setEffect("Sine")}>Sine</Button>{' '}
 
             </div>
             
